@@ -20,7 +20,7 @@ temperature = T0*np.exp(-(X**2+Y**2)/(sigma**2))
 
 dtdx = (temperature[:,2:] - temperature[:,0:-2])/(2*dx)
 dtdy = (temperature[2:,:] - temperature[0:-2,:])/(2*dy)
-grad = np.gradient(temperature)
+grad = np.gradient(temperature,dx)
 
 plot = pp.contourf(X,Y,temperature)
 pp.xlabel('x position (m)')
